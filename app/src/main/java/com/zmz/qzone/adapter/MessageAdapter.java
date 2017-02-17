@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.zmz.qzone.R;
 import com.zmz.qzone.model.Message;
+import com.zmz.qzone.widget.CircleImageView;
 import com.zmz.qzone.widget.RxPraisefriendsView;
 
 import java.util.List;
@@ -36,7 +37,7 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         //通过setDataByArray设置点赞好友
-        holder.praise_members.setDataByArray(msgList.get(position).getPraise_members());
+        holder.praise_members.setDatas(msgList.get(position).getPraise_members());
     }
 
     @Override
@@ -46,7 +47,7 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
 
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        public ImageView imageView;
+        public CircleImageView imageView;
         public TextView name;
         public TextView time;
         public TextView content;
@@ -56,7 +57,7 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
 
         public ViewHolder(View view) {
             super(view);
-            this.imageView = (ImageView) view.findViewById(R.id.imageView);
+            this.imageView = (CircleImageView) view.findViewById(R.id.imageView);
             this.name = (TextView) view.findViewById(R.id.name);
             this.time = (TextView) view.findViewById(R.id.time);
             this.content = (TextView) view.findViewById(R.id.content);
