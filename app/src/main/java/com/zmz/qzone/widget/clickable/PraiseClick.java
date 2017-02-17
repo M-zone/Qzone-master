@@ -1,61 +1,76 @@
 package com.zmz.qzone.widget.clickable;
 
 import android.content.Context;
+import android.support.annotation.NonNull;
 import android.text.TextPaint;
-import android.text.style.ClickableSpan;
 import android.view.View;
-import android.widget.Toast;
+
+import com.zmz.qzone.model.PraiseUser;
+import com.zmz.qzone.utils.UIHelper;
+
 
 /**
- * Created by Mzone on 2016/11/21.
+ * Created by Mzone on 2017/2/21.
+ * 点击事件
  */
-public class PraiseClick extends ClickableSpan {
-    private static final int DEFAULT_COLOR=0xff517fae;
-
+public class PraiseClick extends ClickableSpanEx {
+    private static final int DEFAULT_COLOR = 0xff517fae;
     private int color;
-    private int userID;
-    private String userNick;
     private Context mContext;
     private int textSize;
+    private PraiseUser mPraiseInfo;
 
-    public PraiseClick(Context context, String userNick, int userID, int color) {
-        mContext = context;
-        this.userNick = userNick;
-        this.userID = userID;
-        this.color = color;
-    }
+    private PraiseClick() {}
 
-    public PraiseClick(Context context, int userID, int color) {
-       this(context,"",userID,color);
-    }
-
-    public PraiseClick(Context context, int userID) {
-       this(context,"",userID,0);
+    private PraiseClick(Builder builder) {
+        super(builder.color,builder.clickBgColor);
+        mContext = builder.mContext;
+        mPraiseInfo = builder.mPraiseInfo;
+        this.textSize = builder.textSize;
     }
 
-    public PraiseClick(Context context, String userNick, int userID) {
-       this(context,userNick,userID,0);
-    }
-    public PraiseClick(Context context, String userNick, int userID, int color, int textSize) {
-       this(context,userNick,userID,color);
-       this.textSize=textSize;
-    }
     @Override
     public void onClick(View widget) {
-        Toast.makeText(mContext,"当前用户名是： "+userNick+"   它的ID是： "+userID, Toast.LENGTH_SHORT).show();
-
+        if (mPraiseInfo!=null)
+            UIHelper.ToastMessage("当前用户名是： " + mPraiseInfo.getNick() + "   它的ID是： " + mPraiseInfo.getUserid());
     }
 
     @Override
     public void updateDrawState(TextPaint ds) {
         super.updateDrawState(ds);
-        //去掉下划线
-        if (color == 0) {
-            ds.setColor(DEFAULT_COLOR);
-        } else {
-            ds.setColor(color);
-        }
         ds.setTextSize(textSize);
-        ds.setUnderlineText(false);
+    }
+
+
+    public static class Builder {
+        private int color;
+        private Context mContext;
+        private int textSize=16;
+        private PraiseUser mPraiseInfo;
+        private int clickBgColor;
+
+        public Builder(Context context, @NonNull PraiseUser info) {
+            mContext = context;
+            mPraiseInfo=info;
+        }
+
+        public Builder setTextSize(int textSize) {
+            this.textSize = UIHelper.sp2px(textSize);
+            return this;
+        }
+
+        public Builder setColor(int color) {
+            this.color = color;
+            return this;
+        }
+
+        public Builder setClickEventColor(int color){
+            this.clickBgColor=color;
+            return this;
+        }
+
+        public PraiseClick build() {
+            return new PraiseClick(this);
+        }
     }
 }
