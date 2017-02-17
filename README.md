@@ -1,7 +1,7 @@
 # Qzone-master
 高仿QQ空间好友点赞功能，抽取出RxPraisefriendsView依赖使用</br>
 ##效果图：</br>
-![image](https://github.com/razerdp/PraiseWidget/blob/master/img/praise widget.gif)
+![image](https://github.com/M-zone/Qzone-master/blob/master/readme/ezgif.com-gif-maker.gif)
 ##使用方法：</br>
 在布局配置控件后，使用setData方法传入消息数据，根据需求自行定义</br>
 ##属性：(attrs.xml)</br>
