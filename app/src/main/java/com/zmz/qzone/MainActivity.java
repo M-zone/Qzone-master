@@ -8,7 +8,6 @@ import android.support.v7.widget.RecyclerView;
 import com.zmz.qzone.adapter.MessageAdapter;
 import com.zmz.qzone.model.Message;
 import com.zmz.qzone.model.PraiseUser;
-import com.zmz.qzone.widget.RxPraisefriendsView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,14 +29,14 @@ public class MainActivity extends AppCompatActivity {
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         msgList=new ArrayList<>();
         //手动生成五条说说
-        for (int i=0;i<5;i++){
+        for (int i=0;i<10;i++){
             msg=new Message();
             testBeans=new ArrayList<>();
             //手动生成十个点赞好友
-            for (int j=0;j<10;j++){
+            for (int j=0;j<20;j++){
                 PraiseUser bean=new PraiseUser();
-                bean.userNick="Friend"+j;
-                bean.userId=j;
+                bean.setNick("好友"+j);
+                bean.setUserid(j+"");
                 testBeans.add(bean);
             }
             msg.setPraise_members(testBeans);
@@ -49,6 +48,5 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        RxPraisefriendsView.clearPraiseWidgetCache();
     }
 }
