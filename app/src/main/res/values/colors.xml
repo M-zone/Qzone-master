@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="gray_divider_1">#ffdfdfdf</color>
+    <color name="black">#ff3d3333</color>
+    <color name="luoki">#ff3d3333</color>
+    <color name="white">#ffffffff</color>
+    <color name="gray">#ff9e9595</color>
+    <color name="red">#fff96650</color>
+    <color name="b2white">#b2ffffff</color>
+    <color name="transparent">#00000000</color>
+</resources>

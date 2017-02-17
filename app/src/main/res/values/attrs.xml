@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="Praisefriends">
+        <attr name="underlineText" format="boolean" />
+        <attr name="textColor" format="integer|dimension" />
+    </declare-styleable>
+    <!--显示点赞控件-->
+    <declare-styleable name="RxPraisefriendsView">
+        <attr name="click_bg_color" format="color"/>
+        <attr name="font_color" format="color"/>
+        <attr name="font_size" format="dimension"/>
+        <attr name="zan_icon" format="reference"/>
+    </declare-styleable>
+</resources>
