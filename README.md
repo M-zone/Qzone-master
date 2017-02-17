@@ -7,7 +7,7 @@
 ##属性：(attrs.xml)</br>
 ```html
      <!--显示点赞控件-->
-      <declare-styleable name="PraiseWidget">
+      <declare-styleable name="RxPraisefriendsView">
       <attr name="click_bg_color" format="color"/>//点击的背景色，默认全透明
         <attr name="font_color" format="color"/>//文字颜色，默认蓝
         <attr name="font_size" format="dimension"/>//文字大小，默认16sp
