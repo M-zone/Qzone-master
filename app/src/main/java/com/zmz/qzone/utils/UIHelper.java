@@ -9,11 +9,11 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.zmz.qzone.FriendCircleApp;
+import com.zmz.qzone.MzoneApp;
 
 
 /**
- * Created by 大灯泡 on 2016/10/26.
+ * Created by Mzone on 2016/10/26.
  * <p>
  * ui工具类
  */
@@ -26,7 +26,7 @@ public class UIHelper {
      * dip转px
      */
     public static int dipToPx(float dip) {
-        return (int) (dip * FriendCircleApp.getAppContext().getResources()
+        return (int) (dip * MzoneApp.getAppContext().getResources()
                                            .getDisplayMetrics().density + 0.5f);
     }
 
@@ -34,7 +34,7 @@ public class UIHelper {
      * px转dip
      */
     public static int pxToDip(float pxValue) {
-        final float scale = FriendCircleApp.getAppContext().getResources()
+        final float scale = MzoneApp.getAppContext().getResources()
                                            .getDisplayMetrics().density;
         return (int) (pxValue / scale + 0.5f);
     }
@@ -43,7 +43,7 @@ public class UIHelper {
      * 将sp值转换为px值
      */
     public static int sp2px(float spValue) {
-        final float fontScale = FriendCircleApp.getAppContext().getResources()
+        final float fontScale = MzoneApp.getAppContext().getResources()
                                                .getDisplayMetrics().scaledDensity;
         return (int) (spValue * fontScale + 0.5f);
     }
@@ -52,7 +52,7 @@ public class UIHelper {
      * 获取屏幕分辨率：宽
      */
     public static int getScreenWidthPix(@Nullable Context context) {
-        if (context == null) context = FriendCircleApp.getAppContext();
+        if (context == null) context = MzoneApp.getAppContext();
         int width = context.getResources().getDisplayMetrics().widthPixels;
         return width;
     }
@@ -61,7 +61,7 @@ public class UIHelper {
      * 获取屏幕分辨率：高
      */
     public static int getScreenHeightPix(@Nullable Context context) {
-        if (context == null) context = FriendCircleApp.getAppContext();
+        if (context == null) context = MzoneApp.getAppContext();
         int height = context.getResources().getDisplayMetrics().heightPixels;
         return height;
     }
@@ -149,7 +149,7 @@ public class UIHelper {
      * Toast封装
      */
     public static void ToastMessage(String msg) {
-        Toast.makeText(FriendCircleApp.getAppContext(), msg, Toast.LENGTH_LONG).show();
+        Toast.makeText(MzoneApp.getAppContext(), msg, Toast.LENGTH_LONG).show();
     }
 
     /**
@@ -159,7 +159,7 @@ public class UIHelper {
 
     public static int getResourceColor(int colorResId) {
         if (colorResId > 0) {
-            return FriendCircleApp.getAppContext()
+            return MzoneApp.getAppContext()
                                   .getResources()
                                   .getColor(colorResId);
         } else {
