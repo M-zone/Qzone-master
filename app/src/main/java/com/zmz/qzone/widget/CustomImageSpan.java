@@ -1,7 +1,7 @@
 package com.zmz.qzone.widget;
 
 /**
- * Created by Mzone on 2016/9/28.
+ * Created by Mzone on 2016/11/28.
  */
 
 import android.content.Context;
